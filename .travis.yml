@@ -14,7 +14,7 @@ before_script:
 - docker-compose build
 - docker-compose up -d
 script:
-- pip install testinfa
+- pip install testinfra
 - pip install pytest-flask
 before_cache:
 after_success:
