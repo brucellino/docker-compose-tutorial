@@ -3,7 +3,23 @@ python:
 - '2.7'
 - '3.3'
 sudo: required
+apt_addons:
+- wget
 services:
 - docker
-script:
+before_install:
+install:
+- pip install testinfra
+before_script:
 - docker-compose build
+- docker-compose up
+script:
+- pip install testinfa
+- pip install pytest-flask
+before_cache:
+after_success:
+after_failure:
+before_deploy:
+deploy:
+after_deploy:
+after_script:
