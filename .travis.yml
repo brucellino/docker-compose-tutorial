@@ -5,6 +5,5 @@ python:
 sudo: required
 services:
 - docker
-addons:
-- flask
-- redis
+script:
+- docker-compose build
