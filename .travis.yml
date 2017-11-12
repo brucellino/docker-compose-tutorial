@@ -12,12 +12,13 @@ install:
 - pip install testinfra
 before_script:
 - docker-compose build
-- docker-compose up
+- docker-compose up -d
 script:
 - pip install testinfa
 - pip install pytest-flask
 before_cache:
 after_success:
+- docker-compose down
 after_failure:
 before_deploy:
 deploy:
